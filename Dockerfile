@@ -1,4 +1,4 @@
-# built as raisepartner/alpine-ssh-git:3.11
+# built as raisepartner/alpine-ssh-git:1.0
 FROM alpine:3.11
 RUN apk add --no-cache \
   openssh-client \
@@ -6,12 +6,7 @@ RUN apk add --no-cache \
   bash \
   git
 
-#FROM debian
-#
-#RUN apt-get update \
-#    && apt-get install -y --no-install-recommends git ssh openssh-client \
-#    && apt-get clean \
-#    && rm -rf /var/lib/apt/lists/*
-
 RUN mkdir /root/.ssh \
-    && chmod 700 /root/.ssh
+    && chmod 700 /root/.ssh \
+    && printf "Host *.raisepartner.com\n    StrictHostKeyChecking accept-new" > /root/.ssh/config \
+    && chmod 400 /root/.ssh/config
