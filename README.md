@@ -1,6 +1,7 @@
-# debian-ssh-git
-debian + openssh + git for CI
+# alpine-ssh-git
+alpine + openssh + git for CI
 
+also includes: curl, kustomize
 
 ## usage
 
