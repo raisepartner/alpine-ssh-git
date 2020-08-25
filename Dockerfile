@@ -1,5 +1,5 @@
-# built as raisepartner/alpine-ssh-git:1.1
-FROM alpine:3.11
+# built as raisepartner/alpine-ssh-git:1.2
+FROM gcr.io/google.com/cloudsdktool/cloud-sdk:alpine
 RUN apk add --no-cache \
   openssh-client \
   ca-certificates \
@@ -15,3 +15,4 @@ RUN mkdir /root/.ssh \
 RUN curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | bash \
     && mv /kustomize /usr/bin
 
+RUN gcloud components install kubectl
