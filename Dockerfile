@@ -17,7 +17,7 @@ RUN curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/
     && mv /kustomize /usr/bin
 
 # install yq
-ENV YQ_VERSION "v4.2.0"
+ENV YQ_VERSION "v4.9.3"
 ENV YQ_BINARY "yq_linux_amd64"
-RUN curl -s https://github.com/mikefarah/yq/releases/download/${YQ_VERSION}/${YQ_BINARY} -o /usr/bin/yq \
+RUN curl -sSL https://github.com/mikefarah/yq/releases/download/${YQ_VERSION}/${YQ_BINARY} -o /usr/bin/yq \
     && chmod +x /usr/bin/yq
