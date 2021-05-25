@@ -5,7 +5,8 @@ RUN apk add --no-cache \
   ca-certificates \
   bash \
   git \
-  curl
+  curl \
+  python3
 
 RUN mkdir /root/.ssh \
     && chmod 700 /root/.ssh \
@@ -16,3 +17,6 @@ RUN curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/
     && mv /kustomize /usr/bin
 
 RUN gcloud components install kubectl
+
+RUN pip3 install -U pip \
+    && pip3 install yq

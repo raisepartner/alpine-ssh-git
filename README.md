@@ -1,7 +1,7 @@
 # alpine-ssh-git
 alpine + openssh + git for CI
 
-also includes: curl, kustomize, kubectl, gcloud
+also includes: curl, kustomize, kubectl, gcloud, yq
 
 ## usage
 
