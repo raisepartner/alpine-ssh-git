@@ -1,5 +1,5 @@
 # built as raisepartner/alpine-ssh-git:1.3
-FROM google/cloud-sdk:341-alpine
+FROM google/cloud-sdk:341.0.0-alpine
 RUN apk add --no-cache \
   openssh-client \
   ca-certificates \
