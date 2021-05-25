@@ -1,12 +1,13 @@
 # built as raisepartner/alpine-ssh-git:1.3
-FROM gcr.io/google.com/cloudsdktool/cloud-sdk:alpine
+FROM google/cloud-sdk:341-alpine
 RUN apk add --no-cache \
   openssh-client \
   ca-certificates \
   bash \
   git \
   curl \
-  python3
+  python3 \
+  py3-pip
 
 RUN mkdir /root/.ssh \
     && chmod 700 /root/.ssh \
