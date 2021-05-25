@@ -1,4 +1,4 @@
-# built as raisepartner/alpine-ssh-git:1.2
+# built as raisepartner/alpine-ssh-git:1.3
 FROM gcr.io/google.com/cloudsdktool/cloud-sdk:alpine
 RUN apk add --no-cache \
   openssh-client \
