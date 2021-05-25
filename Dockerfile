@@ -1,4 +1,4 @@
-# built as raisepartner/alpine-ssh-git:1.0.0
+# built as raisepartner/alpine-ssh-git:1.4.0
 FROM alpine:3.13
 RUN apk add --no-cache \
   openssh-client \
