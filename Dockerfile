@@ -1,13 +1,12 @@
-# built as raisepartner/alpine-ssh-git:1.3
-FROM google/cloud-sdk:341.0.0-alpine
+# built as raisepartner/alpine-ssh-git:1.0.0
+FROM alpine:3.13
 RUN apk add --no-cache \
   openssh-client \
   ca-certificates \
   bash \
   git \
   curl \
-  python3 \
-  py3-pip
+  jq
 
 RUN mkdir /root/.ssh \
     && chmod 700 /root/.ssh \
@@ -17,7 +16,8 @@ RUN mkdir /root/.ssh \
 RUN curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | bash \
     && mv /kustomize /usr/bin
 
-RUN gcloud components install kubectl
-
-RUN pip3 install -U pip \
-    && pip3 install yq
+# install yq
+ENV YQ_VERSION "v4.2.0"
+ENV YQ_BINARY "yq_linux_amd64"
+RUN curl -s https://github.com/mikefarah/yq/releases/download/${YQ_VERSION}/${YQ_BINARY} -o /usr/bin/yq \
+    && chmod +x /usr/bin/yq
